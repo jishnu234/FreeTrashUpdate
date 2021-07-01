@@ -1,0 +1,2 @@
+rootProject.name = "FreeTrashUpdate"
+include ':app'
