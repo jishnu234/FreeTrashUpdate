@@ -38,13 +38,14 @@ public class UpdateUser extends AppCompatActivity {
         updateUserBinding = ActivityUpdateUserBinding.inflate(getLayoutInflater(), null, false);
         setContentView(updateUserBinding.getRoot());
 
-        reference = FirebaseDatabase.getInstance().getReference("User");
+
         userList = new ArrayList<>();
 
         updateUserBinding.userList.setHasFixedSize(true);
         updateUserBinding.userList.setLayoutManager(new LinearLayoutManager(this));
         adapter = new RecyclerAdapter(this, userList);
         updateUserBinding.userList.setAdapter(adapter);
+        reference = FirebaseDatabase.getInstance().getReference("User");
 
         refreshUser();
 
@@ -65,6 +66,8 @@ public class UpdateUser extends AppCompatActivity {
     }
 
     private void deleteUser() {
+        reference = FirebaseDatabase.getInstance().getReference("User");
+
         AlertDialog.Builder builder  = new AlertDialog.Builder(this);
         builder.setTitle("Delete User")
                 .setView(R.layout.alert_user_add)
@@ -118,6 +121,8 @@ public class UpdateUser extends AppCompatActivity {
     }
 
     private void addUser() {
+        reference = FirebaseDatabase.getInstance().getReference("User");
+
         AlertDialog.Builder builder  = new AlertDialog.Builder(this);
         builder.setTitle("Add User")
                 .setView(R.layout.alert_user_add)

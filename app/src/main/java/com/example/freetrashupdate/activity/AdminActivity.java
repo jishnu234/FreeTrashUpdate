@@ -85,7 +85,9 @@ public class AdminActivity extends AppCompatActivity implements View.OnClickList
 
         switch (item.getItemId()) {
             case R.id.manage_user:
-                startActivity(new Intent(getApplicationContext(), UpdateUser.class));
+                Intent adminIntent = new Intent(getApplicationContext(), UpdateUser.class);
+                adminIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(adminIntent);
                 break;
 
             default:
@@ -119,15 +121,12 @@ public class AdminActivity extends AppCompatActivity implements View.OnClickList
         mNotificationManager.notify(( int ) System. currentTimeMillis (), mBuilder.build()) ;
     }
 
-    @Override
-    public void onBackPressed() {
-        Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivity(intent);
-    }
 
     public void locate(View view) {
-        startActivity(new Intent(getApplicationContext(), MapsActivity.class));
+        Intent intent = new Intent(AdminActivity.this, MapsActivity.class);
+        intent.putExtra("mapUser","admin");
+//        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP| Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
     }
 
     @Override

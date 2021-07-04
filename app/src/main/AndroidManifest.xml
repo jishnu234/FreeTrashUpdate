@@ -16,7 +16,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FreeTrashUpdate">
-        <activity android:name=".activity.UpdateUser"></activity>
+        <activity android:name=".activity.LoginUser" android:label="User login"/>
+        <activity android:name=".activity.UpdateUser" />
         <activity android:name=".activity.BinDisplay" />
         <activity android:name=".activity.AdminActivity" />
         <activity android:name=".activity.LoginScreen" />

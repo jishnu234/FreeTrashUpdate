@@ -2,6 +2,7 @@ package com.example.freetrashupdate.activity;
 
 import androidx.fragment.app.FragmentActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.example.freetrashupdate.R;
@@ -47,5 +48,19 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         googleMap.moveCamera(CameraUpdateFactory.newLatLng(kinassery));
         googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(kinassery, 17));
+    }
+
+    @Override
+    public void onBackPressed() {
+
+        if(getIntent().getExtras().getString("mapUser").equals("user")) {
+            Intent intent = new Intent(getApplicationContext(), BinDisplay.class);
+//            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+        } else{
+            Intent intent = new Intent(getApplicationContext(), AdminActivity.class);
+//            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+        }
     }
 }

@@ -1,8 +1,8 @@
 package com.example.freetrashupdate.activity;
 
 public class User {
-    String username;
-    String password;
+    private String username;
+    private String password;
 
     public User() {
     }

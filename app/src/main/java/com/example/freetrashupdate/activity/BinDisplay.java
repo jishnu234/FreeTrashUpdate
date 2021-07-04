@@ -37,6 +37,12 @@ public class BinDisplay extends AppCompatActivity {
         setContentView(displayBinding.getRoot());
         getSupportActionBar().setTitle(R.string.user);
 
+//        if(!getIntent().getStringExtra("tag").equals("user")) {
+//            Intent adminIntent = new Intent(getApplicationContext(), UpdateUser.class);
+//            adminIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+//            startActivity(adminIntent);
+//        }
+
         ref = FirebaseDatabase.getInstance().getReference();
 
         displayBinding.percentText.setOnClickListener(new View.OnClickListener() {
@@ -109,14 +115,10 @@ public class BinDisplay extends AppCompatActivity {
 
 
 
-    @Override
-    public void onBackPressed() {
-        Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivity(intent);
-    }
-
     public void locateButton(View view) {
-        startActivity(new Intent(getApplicationContext(), MapsActivity.class));
+        Intent intent = new Intent(getApplicationContext(), MapsActivity.class);
+        intent.putExtra("mapUser","user");
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
     }
 }
