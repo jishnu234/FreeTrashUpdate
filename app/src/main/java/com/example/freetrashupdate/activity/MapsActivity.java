@@ -50,17 +50,4 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(kinassery, 17));
     }
 
-    @Override
-    public void onBackPressed() {
-
-        if(getIntent().getExtras().getString("mapUser").equals("user")) {
-            Intent intent = new Intent(getApplicationContext(), BinDisplay.class);
-//            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-            startActivity(intent);
-        } else{
-            Intent intent = new Intent(getApplicationContext(), AdminActivity.class);
-//            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-            startActivity(intent);
-        }
-    }
 }

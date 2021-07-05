@@ -167,7 +167,7 @@ public class LoginScreen extends AppCompatActivity implements View.OnClickListen
                         if (snap.child("username").getValue(String.class).toLowerCase().equals(usernameField.toLowerCase())) {
                             if (snap.child("password").getValue(String.class).toLowerCase().equals(passwordField.toLowerCase())) {
                                 Intent adminIntent = new Intent(getApplicationContext(), AdminActivity.class);
-                                adminIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                                adminIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                                 startActivity(adminIntent);
                             }
                         }

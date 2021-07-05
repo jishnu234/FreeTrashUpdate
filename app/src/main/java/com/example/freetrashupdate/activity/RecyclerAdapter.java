@@ -15,20 +15,20 @@ import com.example.freetrashupdate.R;
 import java.util.ArrayList;
 
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder> {
-    Context mcontext;
+    Context mContext;
     ArrayList<User> dataList;
 //    DatabaseReference reference = FirebaseDatabase.getInstance().getReference("User");
 
 
-    public RecyclerAdapter(Context mcontext, ArrayList<User> dataList) {
-        this.mcontext = mcontext;
+    public RecyclerAdapter(Context context, ArrayList<User> dataList) {
+        this.mContext = context;
         this.dataList = dataList;
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(mcontext).inflate(R.layout.user_list_layout,
+        View view = LayoutInflater.from(mContext).inflate(R.layout.user_list_layout,
                 parent, false);
         ViewHolder holder = new ViewHolder(view);
         return  holder;

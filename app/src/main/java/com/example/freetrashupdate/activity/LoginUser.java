@@ -48,7 +48,7 @@ public class LoginUser extends AppCompatActivity implements View.OnClickListener
                         if (snap.child("username").getValue(String.class).toLowerCase().equals(username.toLowerCase())) {
                             if (snap.child("password").getValue(String.class).toLowerCase().equals(password.toLowerCase())) {
                                 Intent userIntent = new Intent(getApplicationContext(), BinDisplay.class);
-                                userIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                                userIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                                 userIntent.putExtra("tag", "user");
                                 startActivity(userIntent);
                             }

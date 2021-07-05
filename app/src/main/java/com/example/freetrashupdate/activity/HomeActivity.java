@@ -98,12 +98,12 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         if (homeBinding.adminCard.equals(v)) {
             Intent adminIntent = new Intent(HomeActivity.this, LoginScreen.class);
 //            adminIntent.putExtra("tag", "admin");
-//            adminIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+            adminIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(adminIntent);
         } else if (homeBinding.userCard.equals(v)) {
             Intent userIntent = new Intent(HomeActivity.this, LoginUser.class);
 //            userIntent.putExtra("tag", "user");
-//            userIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+            userIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(userIntent);
         } else {
             Log.d(TAG, "onClick: Invalid view captured");
