@@ -263,6 +263,8 @@ public class AdminActivity extends AppCompatActivity implements View.OnClickList
                         public void onSuccess(Void unused) {
                             Toast.makeText(AdminActivity.this, "User added Successfully", Toast.LENGTH_SHORT).show();
                             initUser();
+                            if(dialog.isShowing())
+                                dialog.dismiss();
                         }
                     }).addOnFailureListener(new OnFailureListener() {
                         @Override

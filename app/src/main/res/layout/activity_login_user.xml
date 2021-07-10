@@ -73,7 +73,7 @@
             android:layout_marginTop="25dp"
             android:src="@drawable/right_arrow"
             android:tint="@color/white"
-            app:background="@color/black" />
+            app:backgroundTint="@color/black" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
