@@ -64,7 +64,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
 
                             if (snapshot.exists()) {
-                                int val = Integer.parseInt(snapshot.getValue().toString());
+                                int val = snapshot.getValue(Integer.class);
                                 percent = (100 / 20) * (20 - val);
 
                                 if (percent > 70)

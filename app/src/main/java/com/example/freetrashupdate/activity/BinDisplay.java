@@ -69,7 +69,7 @@ public class BinDisplay extends AppCompatActivity {
 
                 if(snapshot.exists()) {
 
-                    int val = Integer.parseInt(snapshot.getValue().toString());
+                    int val = snapshot.getValue(Integer.class);
                     percent = (100/20)*(20-val);
                     displayBinding.circularProgressbar.setProgress(20-val);
                     displayBinding.percentText.setText(percent + " %");

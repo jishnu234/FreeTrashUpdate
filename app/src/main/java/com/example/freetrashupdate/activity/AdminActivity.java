@@ -105,7 +105,7 @@ public class AdminActivity extends AppCompatActivity implements View.OnClickList
 
                 if(snapshot.exists()) {
 
-                    int val = Integer.parseInt(snapshot.getValue().toString());
+                    int val = snapshot.getValue(Integer.class);
                     percent = (100/20)*(20-val);
                     adminBinding.circularProgressbar.setProgress(20-val);
                     adminBinding.percentText.setText(percent + " %");
